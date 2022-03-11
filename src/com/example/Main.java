@@ -8,6 +8,6 @@ public class Main {
         // 15. 3Sum
         System.out.println(Solution.threeSum(new int[]{-1,0,1,2,-1,-4}));
 
-        
+
     }
 }
