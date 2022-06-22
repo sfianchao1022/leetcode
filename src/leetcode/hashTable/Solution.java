@@ -1,11 +1,13 @@
 package leetcode.hashTable;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
 
     /**
      * 13. Roman to Integer
+     *
      * @param s
      * @return
      */
@@ -31,7 +33,7 @@ public class Solution {
 
         int ans = map.get(s.charAt(s.length() - 1));
 
-        for (int i = s.length() - 1; i > 0 ; i--) {
+        for (int i = s.length() - 1; i > 0; i--) {
             char current = s.charAt(i);
             char next = s.charAt(i - 1);
             if (map.get(next) < map.get(current)) {

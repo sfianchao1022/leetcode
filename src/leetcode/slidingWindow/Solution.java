@@ -1,14 +1,13 @@
 package leetcode.slidingWindow;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class Solution {
 
     /**
      * 3. Longest Substring Without Repeating Characters
+     *
      * @param s
      * @return
      */
@@ -32,8 +31,6 @@ public class Solution {
 
         return max;
     }
-
-
 
 
 }
