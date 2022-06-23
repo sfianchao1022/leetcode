@@ -2,22 +2,41 @@ package leetcode.DFS;
 
 public class Solution {
 
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
     /**
      * Definition for a binary tree node.
      * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode() {}
-     *     TreeNode(int val) { this.val = val; }
-     *     TreeNode(int val, TreeNode left, TreeNode right) {
-     *         this.val = val;
-     *         this.left = left;
-     *         this.right = right;
-     *     }
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
      * }
      */
-    public boolean hasPathSum(TreeNode root, int targetSum) {
+    public static boolean hasPathSum(TreeNode root, int targetSum) {
 
         if (root == null) {
             return false;
@@ -41,27 +60,40 @@ public class Solution {
 
     }
 
+    /**
+     * 200. Number of Islands
+     *
+     * @param grid
+     * @return
+     */
+    public static int numIslands(char[][] grid) {
 
-}
+        int sum = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == '1') {
+                    sum += 1;
+                    callDFS(grid, i, j);
+                }
+            }
+        }
 
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
+        return sum;
     }
 
-    TreeNode(int val) {
-        this.val = val;
+    private static void callDFS(char[][] grid, int i, int j) {
+        if (i < 0 || i >= grid.length || j < 0 || j >= grid[i].length || grid[i][j] == '0') {
+            return;
+        } else {
+            grid[i][j] = '0';
+            callDFS(grid, i + 1, j);
+            callDFS(grid, i - 1, j);
+            callDFS(grid, i, j + 1);
+            callDFS(grid, i, j - 1);
+        }
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
+
 }
 
 
