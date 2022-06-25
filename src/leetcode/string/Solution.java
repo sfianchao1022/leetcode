@@ -1,12 +1,17 @@
 package leetcode.string;
 
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+
+import static java.util.stream.Collectors.toList;
 
 public class Solution {
 
     /**
      * 242. Valid Anagram
+     *
      * @param s
      * @param t
      * @return
