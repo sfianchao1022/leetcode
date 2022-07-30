@@ -10,6 +10,27 @@ import static java.util.stream.Collectors.toList;
 public class Solution {
 
     /**
+     * 58. Length of Last Word
+     * @param s
+     * @return
+     */
+    public static int lengthOfLastWord(String s) {
+
+        for (int i = s.length() - 1; i >= 0; i--) {
+            char c = s.charAt(i);
+            if (c != ' ') {
+                break;
+            } else {
+                s = s.substring(0, i);
+            }
+        }
+
+        String last = s.substring(s.lastIndexOf(' ') + 1);
+        System.out.println(last);
+        return last.length();
+    }
+
+    /**
      * 242. Valid Anagram
      *
      * @param s
